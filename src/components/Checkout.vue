@@ -121,8 +121,10 @@
 export default {
     name: 'Checkout',
     methods: {
-        pay(){
-            localStorage.clear()
+        pay() {
+            localStorage.setItem('orders', localStorage.getItem('cart'))
+
+            localStorage.setItem('cart', JSON.stringify([]))
 
             alert('Checkout successful')
         }

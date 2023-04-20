@@ -86,7 +86,7 @@
                                     </router-link>
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-success" v-on:click="clearCart()"> Checkout <span
+                                    <button class="btn btn-sm btn-success" v-on:click="checkout()"> Checkout <span
                                             class="bi bi-play"></span></button>
                                 </td>
                             </tr>
@@ -170,8 +170,22 @@ export default {
                 localStorage.setItem('cart', JSON.stringify(arr))
             }
         },
-        clearCart() {
-            localStorage.clear()
+        checkout() {
+            const data = JSON.parse(localStorage.getItem('cart'))
+
+            localStorage.setItem('orders', JSON.stringify(data.map(res => {
+                return {
+                    id: res.id,
+                    name: res.name,
+                    price: res.price,
+                    total: this.getDuplicates(data, res.id) * res.price,
+                    image: res.image,
+                    date: new Date()
+                }
+            })))
+
+            localStorage.setItem('cart', JSON.stringify([]))
+
             alert('Done')
         }
     }

@@ -7,6 +7,8 @@ import Index from "../views/Index.vue";
 import Drinks from "../views/Drinks.vue";
 import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
+import Orders from "../views/Orders.vue";
+import Drink from "../views/Drink.vue";
 
 Vue.use(Router);
 
@@ -36,6 +38,16 @@ export const router = new Router({
     {
       path: "/login",
       component: Login,
+    },
+
+    {
+      path: "/orders",
+      component: Orders,
+    },
+
+    {
+      path: "/drink",
+      component: Drink,
     },
   ],
 });

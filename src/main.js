@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './assets/css/bs.uncss.css'
-import './assets/css/app.css'
 import './assets/css/main.css'
+import './assets/css/app.css'
 import { router } from './router/index';
 import store from './store'
 
