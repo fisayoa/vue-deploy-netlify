@@ -16,10 +16,6 @@
   </div>
 </template>
 <script>
-import {
-  ADD_ITEM_TO_CART
-} from "vuex-shopping-cart/constants.type";
-
 export default {
   props: ['drink', 'isAdded'],
   data() {
@@ -37,7 +33,7 @@ export default {
       if (localStorage.getItem('cart') != null) {
         const existing = JSON.parse(localStorage.getItem('cart'))
 
-        localStorage.setItem('cart', JSON.stringify([...existing, data]))
+        localStorage.setItem('cart', JSON.stringify([...existing, ...data]))
       } else {
         localStorage.setItem('cart', JSON.stringify(data))
       }

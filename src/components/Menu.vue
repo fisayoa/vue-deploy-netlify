@@ -3,11 +3,11 @@
     <nav class="navbar navbar-dark navbar-expand padding__0 btn-main">
       <div class="container-fluid">
         <ul class="navbar-nav display-none display-md-flex mr-auto">
-          <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="./drinks.html">Drinks</a></li>
-          <li class="nav-item"><a class="nav-link" href="./cart.html">Cart</a></li>
-          <li class="nav-item"><a class="nav-link" href="./auth-register.html">Register</a></li>
-          <li class="nav-item"><a class="nav-link" href="./orders.html">Orders</a></li>
+          <li class="nav-item"> <router-link to="/home" class="nav-link">Home</router-link></li>
+          <li class="nav-item"><router-link to="/drinks" class="nav-link">Drinks</router-link></li>
+          <li class="nav-item"> <router-link to="/cart" class="nav-link">Cart</router-link></li>
+          <li class="nav-item"><router-link to="/register" class="nav-link">Register</router-link></li>
+          <li class="nav-item"><router-link to="/orders" class="nav-link">Orders</router-link></li>
         </ul>
         <ul class="navbar-nav display-flex align-items-center">
           <div class="dropdown">
@@ -25,17 +25,17 @@
             </a>
             <ul class="dropdown-menu">
               <div class="display-block display-lg-none display-md-none">
-                <li><a class="dropdown-item" href="./">Home</a></li>
-                <li><a class="dropdown-item" href="./drinks.html">Drinks</a></li>
-                <li><a class="dropdown-item" href="./cart.html">Cart</a></li>
-                <li><a class="dropdown-item" href="./auth-register.html">Register</a></li>
-                <li><a class="dropdown-item" href="./orders.html">Orders</a></li>
+                <li><router-link to="/index" class="dropdown-item">Home</router-link></li>
+                <li><router-link to="/drinks" class="dropdown-item">Drinks</router-link></li>
+                <li><router-link to="/cart" class="dropdown-item">Cart</router-link></li>
+                <li><router-link to="/register" class="dropdown-item">Register</router-link></li>
+                <li><router-link to="/orders" class="dropdown-item">Orders</router-link></li>
               </div>
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item text-danger" href="./auth-login.html">Logout</a></li>
+              <li><router-link to="/index" class="dropdown-item text-danger">Login</router-link></li>
             </ul>
           </div>
         </ul>
@@ -60,16 +60,17 @@
           </div>
 
           <div class="column-md-2">
-            <a href="./cart.html"
+            <router-link to="/cart"
               class="text-decoration-none text-dark display-flex display-none display-md-flex flex-row align-items-center">
               <span
                 class="btn-main text-light cart display-flex align-items-center justify-content-center fs-4 rounded-circle square-42"><i
                   class="bi bi-cart"></i></span>
               <div class="display-flex flex-column ms-2">
-                <span>1 Product</span>
-                <span class="fw-bold">£27.90</span>
+                <span>{{ length }} Product</span>
+                <span class="fw-bold">£{{ total }}</span>
               </div>
-            </a>
+            </router-link>
+
           </div>
         </div>
       </div>
@@ -78,18 +79,12 @@
 </template>
 <script>
 export default {
-  props: ['meal'],
   data() {
-    return {
-      search: ''
-    }
+    const val = JSON.parse(localStorage.getItem('cart')).map(v => v.price)
 
-  },
-  computed: {
-    filteredMeals: function () {
-      return this.meals.filter((meal) => {
-        return meal.title.match(this.search)
-      })
+    return {
+      length: val.length,
+      total: parseFloat(val.reduce((a, b) => a + b, 0)).toFixed(2)
     }
   }
 }

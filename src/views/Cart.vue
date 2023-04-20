@@ -13,11 +13,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr v-for="drink in drinks" :key="drink.id">
                             <td class="column-sm-8 column-md-6">
                                 <div class="media">
                                     <a class="thumbnail pull-left" href="#">
-                                        <!-- <img class="media-object" :src="drink.image" style="width: 72px; height: 72px;"> -->
+                                        <img class="media-object" :src="drink.image" style="width: 72px; height: 72px;">
                                     </a>
                                     <div class="media-body">
                                         <h5 class="media-heading"><a class="link-dark" href="./drink.html">{{ drink.name }}
@@ -31,7 +31,7 @@
                                 <input type="email" class="form-control" id="exampleInputEmail1" value="3">
                             </td>
                             <td class="column-sm-1 column-md-1 text-center"><strong>£ {{ drink.price }}</strong></td>
-                            <td class="column-sm-1 column-md-1 text-center"><strong>£ {{ drink.price * 3 }}</strong></td>
+                            <td class="column-sm-1 column-md-1 text-center"><strong>£ {{ total }}</strong></td>
                             <td class="column-sm-1 column-md-1">
                                 <button type="button" class="btn btn-danger">
                                     <span class="bi bi-trash"></span> Remove
@@ -46,7 +46,7 @@
                                 <h5>Subtotal</h5>
                             </td>
                             <td class="text-right">
-                                <h5><strong>£ {{ drink.price * 3 }}</strong></h5>
+                                <h5><strong>£ {{ total }}</strong></h5>
                             </td>
                         </tr>
                         <tr>
@@ -57,7 +57,7 @@
                                 <h5>Estimated shipping</h5>
                             </td>
                             <td class="text-right">
-                                <h5><strong>£ 6.94</strong></h5>
+                                <h5><strong>£ {{ shipping }}</strong></h5>
                             </td>
                         </tr>
                         <tr>
@@ -68,7 +68,7 @@
                                 <h4>Total</h4>
                             </td>
                             <td class="text-right">
-                                <h4><strong>£ {{ drink.price * 3 + 6.94 }}</strong></h4>
+                                <h4><strong>£ {{ total + shipping }}</strong></h4>
                             </td>
                         </tr>
                         <tr>
@@ -115,15 +115,33 @@ import drinks from '../drinks.json'
 
 export default {
     name: 'Cart',
-    computed: {
-        total() {
-            return this.items.reduce((acc, item) => acc + Number(item.price), 0)
-        },
-        drink() {
-            return drinks.slice()
+    data() {
+        const val = JSON.parse(localStorage.getItem('cart'))
+
+        const dupes = val.map(res => res.id)
+        console.log(this.getTimesOfDuplicates(val))
+        return {
+            shipping: 7,
+            length: val.length,
+            drinks: this.removeDupes(val),
+            total: parseFloat(val.map(v => v.price).reduce((a, b) => a + b, 0)).toFixed(2)
         }
     },
+
     methods: {
+        removeDupes(arr) {
+            return arr.filter(
+                (obj, index) =>
+                    arr.findIndex((item) => item.id === obj.id) === index
+            );
+        },
+        getTimesOfDuplicates(arr) {
+            return arr.filter(
+                (obj, index) =>
+                    arr.findIndex((item) => item.id === obj.id) !== index
+            );
+        },
+
         removeItem(drink) {
             this.cart = this.cart.filter(item => item.id !== drink.id)
         },
