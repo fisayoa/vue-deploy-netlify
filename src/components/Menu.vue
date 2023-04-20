@@ -80,10 +80,17 @@
 <script>
 export default {
   data() {
-    const val = JSON.parse(localStorage.getItem('cart')).map(v => v.price)
+    const arr = JSON.parse(localStorage.getItem('cart'))
+
+    const val = arr.map(v => v.price)
+
+    const newd = arr.filter(
+      (obj, index) =>
+        arr.findIndex((item) => item.id === obj.id) === index
+    )
 
     return {
-      length: val.length,
+      length: newd.length,
       total: parseFloat(val.reduce((a, b) => a + b, 0)).toFixed(2)
     }
   }
