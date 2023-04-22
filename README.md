@@ -1,4 +1,4 @@
-# Layer3Food Demo
+# Celler Demo
 
 ## Project setup
 ```
