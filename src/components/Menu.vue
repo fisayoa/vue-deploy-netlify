@@ -50,7 +50,7 @@
       <div class="container-fluid">
         <div class="row padding__2 pt-3 pb-3 display-flex align-items-center">
           <div class="column-md-2">
-            <a href="./" class="h2 text-decoration-none display-none display-md-flex text-main">CELLAR</a>
+            <a href="./" class="h2 text-decoration-none display-none display-md-flex text-main">Fine Wine</a>
           </div>
           <div class="column-md-8">
             <div class="input-group">

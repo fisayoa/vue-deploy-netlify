@@ -1,10 +1,10 @@
 .container,
 .container-fluid {
-  --cellar-auth-gutter-x: 1.5rem;
-  --cellar-auth-gutter-y: 0;
+  --fine-wine-auth-gutter-x: 1.5rem;
+  --fine-wine-auth-gutter-y: 0;
   width: 100%;
-  padding-right: calc(var(--cellar-auth-gutter-x) * 0.5);
-  padding-left: calc(var(--cellar-auth-gutter-x) * 0.5);
+  padding-right: calc(var(--fine-wine-auth-gutter-x) * 0.5);
+  padding-left: calc(var(--fine-wine-auth-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
 }
@@ -34,21 +34,21 @@
   }
 }
 .row {
-  --cellar-auth-gutter-x: 1.5rem;
-  --cellar-auth-gutter-y: 0;
+  --fine-wine-auth-gutter-x: 1.5rem;
+  --fine-wine-auth-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(-1 * var(--cellar-auth-gutter-y));
-  margin-right: calc(-0.5 * var(--cellar-auth-gutter-x));
-  margin-left: calc(-0.5 * var(--cellar-auth-gutter-x));
+  margin-top: calc(-1 * var(--fine-wine-auth-gutter-y));
+  margin-right: calc(-0.5 * var(--fine-wine-auth-gutter-x));
+  margin-left: calc(-0.5 * var(--fine-wine-auth-gutter-x));
 }
 .row > * {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(var(--cellar-auth-gutter-x) * 0.5);
-  padding-left: calc(var(--cellar-auth-gutter-x) * 0.5);
-  margin-top: var(--cellar-auth-gutter-y);
+  padding-right: calc(var(--fine-wine-auth-gutter-x) * 0.5);
+  padding-left: calc(var(--fine-wine-auth-gutter-x) * 0.5);
+  margin-top: var(--fine-wine-auth-gutter-y);
 }
 @media (min-width: 768px) {
   .column-md-6 {
@@ -193,30 +193,30 @@
   z-index: 4;
 }
 .btn {
-  --cellar-auth-btn-padding-x: 0.75rem;
-  --cellar-auth-btn-padding-y: 0.375rem;
-  --cellar-auth-btn-font-family: ;
-  --cellar-auth-btn-font-size: 1rem;
-  --cellar-auth-btn-font-weight: 400;
-  --cellar-auth-btn-line-height: 1.5;
-  --cellar-auth-btn-color: #212529;
-  --cellar-auth-btn-bg: transparent;
-  --cellar-auth-btn-border-width: 1px;
-  --cellar-auth-btn-border-color: transparent;
-  --cellar-auth-btn-border-radius: 0.375rem;
-  --cellar-auth-btn-hover-border-color: transparent;
-  --cellar-auth-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+  --fine-wine-auth-btn-padding-x: 0.75rem;
+  --fine-wine-auth-btn-padding-y: 0.375rem;
+  --fine-wine-auth-btn-font-family: ;
+  --fine-wine-auth-btn-font-size: 1rem;
+  --fine-wine-auth-btn-font-weight: 400;
+  --fine-wine-auth-btn-line-height: 1.5;
+  --fine-wine-auth-btn-color: #212529;
+  --fine-wine-auth-btn-bg: transparent;
+  --fine-wine-auth-btn-border-width: 1px;
+  --fine-wine-auth-btn-border-color: transparent;
+  --fine-wine-auth-btn-border-radius: 0.375rem;
+  --fine-wine-auth-btn-hover-border-color: transparent;
+  --fine-wine-auth-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 1px 1px rgba(0, 0, 0, 0.075);
-  --cellar-auth-btn-disabled-opacity: 0.65;
-  --cellar-auth-btn-focus-box-shadow: 0 0 0 0.25rem
-    rgba(var(--cellar-auth-btn-focus-shadow-rgb), 0.5);
+  --fine-wine-auth-btn-disabled-opacity: 0.65;
+  --fine-wine-auth-btn-focus-box-shadow: 0 0 0 0.25rem
+    rgba(var(--fine-wine-auth-btn-focus-shadow-rgb), 0.5);
   display: inline-block;
-  padding: var(--cellar-auth-btn-padding-y) var(--cellar-auth-btn-padding-x);
-  font-family: var(--cellar-auth-btn-font-family);
-  font-size: var(--cellar-auth-btn-font-size);
-  font-weight: var(--cellar-auth-btn-font-weight);
-  line-height: var(--cellar-auth-btn-line-height);
-  color: var(--cellar-auth-btn-color);
+  padding: var(--fine-wine-auth-btn-padding-y) var(--fine-wine-auth-btn-padding-x);
+  font-family: var(--fine-wine-auth-btn-font-family);
+  font-size: var(--fine-wine-auth-btn-font-size);
+  font-weight: var(--fine-wine-auth-btn-font-weight);
+  line-height: var(--fine-wine-auth-btn-line-height);
+  color: var(--fine-wine-auth-btn-color);
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -224,9 +224,9 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  border: var(--cellar-auth-btn-border-width) solid var(--cellar-auth-btn-border-color);
-  border-radius: var(--cellar-auth-btn-border-radius);
-  background-color: var(--cellar-auth-btn-bg);
+  border: var(--fine-wine-auth-btn-border-width) solid var(--fine-wine-auth-btn-border-color);
+  border-radius: var(--fine-wine-auth-btn-border-radius);
+  background-color: var(--fine-wine-auth-btn-bg);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -236,43 +236,43 @@
   }
 }
 .btn:hover {
-  color: var(--cellar-auth-btn-hover-color);
-  background-color: var(--cellar-auth-btn-hover-bg);
-  border-color: var(--cellar-auth-btn-hover-border-color);
+  color: var(--fine-wine-auth-btn-hover-color);
+  background-color: var(--fine-wine-auth-btn-hover-bg);
+  border-color: var(--fine-wine-auth-btn-hover-border-color);
 }
 .btn:focus-visible {
-  color: var(--cellar-auth-btn-hover-color);
-  background-color: var(--cellar-auth-btn-hover-bg);
-  border-color: var(--cellar-auth-btn-hover-border-color);
+  color: var(--fine-wine-auth-btn-hover-color);
+  background-color: var(--fine-wine-auth-btn-hover-bg);
+  border-color: var(--fine-wine-auth-btn-hover-border-color);
   outline: 0;
-  box-shadow: var(--cellar-auth-btn-focus-box-shadow);
+  box-shadow: var(--fine-wine-auth-btn-focus-box-shadow);
 }
 .btn-check:focus-visible + .btn {
-  border-color: var(--cellar-auth-btn-hover-border-color);
+  border-color: var(--fine-wine-auth-btn-hover-border-color);
   outline: 0;
-  box-shadow: var(--cellar-auth-btn-focus-box-shadow);
+  box-shadow: var(--fine-wine-auth-btn-focus-box-shadow);
 }
 .btn:first-child:active {
-  color: var(--cellar-auth-btn-active-color);
-  background-color: var(--cellar-auth-btn-active-bg);
-  border-color: var(--cellar-auth-btn-active-border-color);
+  color: var(--fine-wine-auth-btn-active-color);
+  background-color: var(--fine-wine-auth-btn-active-bg);
+  border-color: var(--fine-wine-auth-btn-active-border-color);
 }
 .btn-check:checked + .btn:focus-visible,
 .btn.active:focus-visible,
 .btn.show:focus-visible,
 .btn:first-child:active:focus-visible,
 :not(.btn-check) + .btn:active:focus-visible {
-  box-shadow: var(--cellar-auth-btn-focus-box-shadow);
+  box-shadow: var(--fine-wine-auth-btn-focus-box-shadow);
 }
 .btn:disabled {
-  color: var(--cellar-auth-btn-disabled-color);
+  color: var(--fine-wine-auth-btn-disabled-color);
   pointer-events: none;
-  background-color: var(--cellar-auth-btn-disabled-bg);
-  border-color: var(--cellar-auth-btn-disabled-border-color);
-  opacity: var(--cellar-auth-btn-disabled-opacity);
+  background-color: var(--fine-wine-auth-btn-disabled-bg);
+  border-color: var(--fine-wine-auth-btn-disabled-border-color);
+  opacity: var(--fine-wine-auth-btn-disabled-opacity);
 }
 .btn-link:focus-visible {
-  color: var(--cellar-auth-btn-color);
+  color: var(--fine-wine-auth-btn-color);
 }
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   position: absolute !important;
@@ -308,7 +308,7 @@
   text-align: center !important;
 }
 .text-muted {
-  --cellar-auth-text-opacity: 1;
+  --fine-wine-auth-text-opacity: 1;
   color: #6c757d !important;
 }
 

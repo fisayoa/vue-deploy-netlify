@@ -1,4 +1,4 @@
-# Layer3Food Demo
+# Fine Wine Demo
 
 ## Project setup
 ```

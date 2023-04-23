@@ -1,56 +1,56 @@
 :root {
-  --cellar-main-color: #ff6026ff;
-  --cellar-main-color-2: #d74009;
-  --cellar-main-color-faint: #ffbca3ff;
-  --cellar-main-color-faint-25: rgba(255, 187, 163, 0.5);
-  --cellar-main-color-hover: #e73e00ff;
-  --cellar-main-color-active: #c93600ff;
-  --cellar-white: #ffffffff;
+  --fine-wine-main-color: #ff6026ff;
+  --fine-wine-main-color-2: #d74009;
+  --fine-wine-main-color-faint: #ffbca3ff;
+  --fine-wine-main-color-faint-25: rgba(255, 187, 163, 0.5);
+  --fine-wine-main-color-hover: #e73e00ff;
+  --fine-wine-main-color-active: #c93600ff;
+  --fine-wine-white: #ffffffff;
 }
 
 body {
   overflow-x: hidden;
 }
 .text-main {
-  color: var(--cellar-main-color);
+  color: var(--fine-wine-main-color);
 }
 
 .background__main {
-  background: var(--cellar-main-color-faint);
+  background: var(--fine-wine-main-color-faint);
 }
 .background__main-2 {
-  background: var(--cellar-main-color-2);
+  background: var(--fine-wine-main-color-2);
 }
 
 .background__main-25 {
-  background-color: var(--cellar-main-color-faint-25);
+  background-color: var(--fine-wine-main-color-faint-25);
 }
 
 /* Button Main  */
 
 .btn-main {
-  color: var(--cellar-white) !important;
-  background: var(--cellar-main-color) !important;
+  color: var(--fine-wine-white) !important;
+  background: var(--fine-wine-main-color) !important;
 }
 
 .btn-outline-main {
-  border-color: var(--cellar-main-color);
-  color: var(--cellar-main-color);
+  border-color: var(--fine-wine-main-color);
+  color: var(--fine-wine-main-color);
 }
 
 /* Hover */
 
 .btn-main:hover,
 .btn-outline-main:hover {
-  color: var(--cellar-white);
-  background: var(--cellar-main-color-hover);
+  color: var(--fine-wine-white);
+  background: var(--fine-wine-main-color-hover);
 }
 
 /* Pressed */
 
 .btn-main:hover:active {
-  color: var(--cellar-white);
-  background: var(--cellar-main-color-active);
+  color: var(--fine-wine-white);
+  background: var(--fine-wine-main-color-active);
 }
 
 /* Disabled */
