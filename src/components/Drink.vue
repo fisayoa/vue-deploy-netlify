@@ -7,7 +7,7 @@
         <h5 class="badge background__main-2 my-1 w-50">£ {{ drink.price }}</h5>
         <div class="display-flex my-2 align-items-center justify-content-evenly">
           <router-link to="/drink" class="btn btn-outline-main px-auto">VIEW DETAILS</router-link>
-          <button v-on:click="addToCart(drink)" class="btn btn-info form-control">
+          <button v-on:click="addToCart(drink)" class="btn btn-main px-auto">
             ADD TO CART
           </button>
         </div>
