@@ -7,7 +7,7 @@
                         <div class="row">
                             <div class="column-md-4">
                                 <article class="me-3">
-                                    <h1 class="text-main">CELLAR</h1>
+                                    <h1 class="text-main">Fine Wine</h1>
                                     <p class="mt-3 description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Neque, sapiente commodi. Consectetur quo a soluta impedit molestiae tenetur expedita
                                         mollitia deserunt deleniti, magnam sit quidem animi explicabo blanditiis optio
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="footer-copyright border-top">
-                        <p class="float-left text-muted"> &copy; 2022 Cellar All rights reserved </p>
+                        <p class="float-left text-muted"> &copy; 2022 Fine Wine All rights reserved </p>
                     </div>
                 </div>
             </footer>

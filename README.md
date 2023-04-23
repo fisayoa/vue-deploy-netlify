@@ -1,4 +1,4 @@
-# Celler Demo
+# Fine Wine Demo
 
 ## Project setup
 ```
