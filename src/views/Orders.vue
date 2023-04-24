@@ -17,7 +17,7 @@
                                 <tr class="cell-1">
                                     <td>#SO-{{ order.id }}</td>
                                     <td>{{order.name}}</td>
-                                    <td><span class="badge background__success">Fullfilled</span></td>
+                                    <td><span class="badge bg-success">Fullfilled</span></td>
                                     <td>${{order.total}}</td>
                                     <td>{{order.date}}</td>
                                     <td><i class="bi bi-three-dots text-black-50"></i></td>

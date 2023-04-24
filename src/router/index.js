@@ -21,7 +21,7 @@ export const router = new Router({
     },
 
     {
-      path: "/home",
+      path: "/",
       component: Index,
     },
 

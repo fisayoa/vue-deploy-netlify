@@ -1,12 +1,21 @@
 <template>
   <div>
-    <img class='mx-auto img-thumbnail' width="100%" height="auto" :src="drink.image" />
+    <img
+      class="mx-auto img-thumbnail"
+      width="100%"
+      height="auto"
+      :src="drink.image"
+    />
     <div class="border border-light text-center mx-auto">
-      <div class=''>
-        <h6 class="text-truncate"> {{ drink.name }}</h6>
+      <div class="">
+        <h6 class="text-truncate">{{ drink.name }}</h6>
         <h5 class="badge background__main-2 my-1 w-50">£ {{ drink.price }}</h5>
-        <div class="display-flex my-2 align-items-center justify-content-evenly">
-          <router-link to="/drink" class="btn btn-outline-main px-auto">VIEW DETAILS</router-link>
+        <div
+          class="display-flex my-2 align-items-center justify-content-evenly"
+        >
+          <router-link to="/drink" class="btn btn-outline-main px-auto"
+            >VIEW DETAILS</router-link
+          >
           <button v-on:click="addToCart(drink)" class="btn btn-main px-auto">
             ADD TO CART
           </button>
@@ -17,28 +26,16 @@
 </template>
 <script>
 export default {
-  props: ['drink', 'isAdded'],
+  props: ["drink", "isAdded"],
   data() {
     return {
-      search: ''
-    }
-
+      search: "",
+    };
   },
   methods: {
     addToCart(drink) {
-      let data = []
-
-      data.push(drink)
-
-      if (localStorage.getItem('cart') != null) {
-        const existing = JSON.parse(localStorage.getItem('cart'))
-
-        localStorage.setItem('cart', JSON.stringify([...existing, ...data]))
-      } else {
-        localStorage.setItem('cart', JSON.stringify(data))
-      }
-    }
-  }
-
-}
+      this.$store.dispatch("cart/ADD_TO_CART", drink);
+    },
+  },
+};
 </script>

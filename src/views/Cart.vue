@@ -14,7 +14,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="drink in drinks" :key="drink.id">
+              <tr v-for="drink in cart.drinks" :key="drink.id">
                 <td class="column-sm-8 column-md-6">
                   <div class="media">
                     <a class="thumbnail pull-left" href="#">
@@ -38,18 +38,21 @@
                   </div>
                 </td>
                 <td class="column-sm-1 column-md-1" style="text-align: center">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
+                  <QuantityForm
                     :value="drink.quantity"
-                  />
+                    :drink="drink"
+                  ></QuantityForm>
                 </td>
                 <td class="column-sm-1 column-md-1 text-center">
                   <strong>£ {{ drink.price }}</strong>
                 </td>
                 <td class="column-sm-1 column-md-1 text-center">
-                  <strong>£ {{ drink.price * drink.quantity }}</strong>
+                  <strong
+                    >£
+                    {{
+                      Number(drink.price * drink.quantity).toFixed(2)
+                    }}</strong
+                  >
                 </td>
                 <td class="column-sm-1 column-md-1">
                   <button
@@ -70,7 +73,7 @@
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>£ {{ total }}</strong>
+                    <strong>£ {{ cart.total }}</strong>
                   </h5>
                 </td>
               </tr>
@@ -83,7 +86,7 @@
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>£ {{ shipping }}</strong>
+                    <strong>£ 10</strong>
                   </h5>
                 </td>
               </tr>
@@ -96,7 +99,7 @@
                 </td>
                 <td class="text-right">
                   <h4>
-                    <strong>£ {{ total + shipping }}</strong>
+                    <strong>£ {{ Number(cart.total) + 10 }}</strong>
                   </h4>
                 </td>
               </tr>
@@ -109,10 +112,6 @@
                     <span class="bi bi-shopping-cart"></span> Continue Shopping
                   </router-link>
                 </td>
-                <!-- <td>
-                                    <button class="btn btn-sm btn-success" v-on:click="checkout()"> Checkout <span
-                                            class="bi bi-play"></span></button>
-                                </td> -->
               </tr>
             </tbody>
           </table>
@@ -129,99 +128,27 @@ import drinks from "../drinks.json";
 
 import Checkout from "../components/Checkout.vue";
 
+import QuantityForm from "../components/QuantityForm.vue";
+
 export default {
   name: "Cart",
   components: {
     Checkout,
+    QuantityForm,
   },
-  data() {
-    const val = JSON.parse(localStorage.getItem("cart"));
+  computed: {
+    cart() {
+      return this.$store.getters["cart/cart"];
+    },
+  },
 
-    return {
-      val: val,
-      shipping: 7,
-      length: this.removeDupes(val).length,
-      drinks: this.removeDupes(val),
-      total: parseFloat(
-        val.map((v) => v.price).reduce((a, b) => a + b, 0)
-      ).toFixed(2),
-    };
+  mounted() {
+    return this.$store.dispatch("cart/GET_CART");
   },
 
   methods: {
-    removeDupes(arr) {
-      return arr
-        .filter(
-          (obj, index) => arr.findIndex((item) => item.id === obj.id) === index
-        )
-        .map((res) => {
-          return {
-            id: res.id,
-            name: res.name,
-            price: res.price,
-            quantity: this.getDuplicates(arr, res.id),
-            image: res.image,
-          };
-        });
-    },
-    getDuplicates(arr, id) {
-      let duplicates = [];
-      let idSet = new Set();
-      for (let item of arr) {
-        if (item.id === id) {
-          if (idSet.has(id)) {
-            duplicates.push(item);
-          } else {
-            idSet.add(id);
-          }
-        }
-      }
-
-      if (duplicates.length < 1) {
-        return 1;
-      } else {
-        return duplicates.length + 1;
-      }
-    },
-
     removeItem(id) {
-      let arr = this.val;
-      let d;
-
-      const found = arr.filter((data) => data.id == id);
-
-      if (!found) {
-        alert("No items found in cart");
-      }
-
-      for (const res of found) {
-        arr.splice(objWithIdIndex, 1);
-
-        localStorage.setItem("cart", JSON.stringify(arr));
-      }
-    },
-    checkout() {
-      const data = JSON.parse(localStorage.getItem("cart"));
-
-      localStorage.setItem(
-        "orders",
-        JSON.stringify(
-          data.map((res) => {
-            return {
-              id: res.id,
-              name: res.name,
-              price: res.price,
-              total: this.getDuplicates(data, res.id) * res.price,
-              image: res.image,
-              date: new Date(),
-            };
-          })
-        )
-      );
-
-      localStorage.setItem("cart", JSON.stringify([]));
-
-      alert("Done");
+      this.$store.dispatch("cart/REMOVE_FROM_CART", id);
     },
   },
 };

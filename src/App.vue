@@ -25,40 +25,9 @@ export default {
     Carousel,
     Footer,
   },
-  data() {
-    return {
-      drinks,
-      cart: [],
-      search: "",
-    };
+  mounted() {
+    this.$store.dispatch("cart/GET_CART");
   },
-  created() {
-    this.$router.push("/home");
-  },
-  methods: {
-    addToCart(drink) {
-      this.cart.push(drink);
-    },
-    isAdded(drink) {
-      const item = this.cart.find((item) => item.id === drink.id);
-
-      if (item) {
-        return true;
-      }
-
-      return false;
-    },
-    removeItem(drink) {
-      this.cart = this.cart.filter((item) => item.id !== drink.id);
-    },
-    pay() {
-      this.cart = [];
-      alert("Done");
-    },
-    clearCart() {
-      this.cart = [];
-      alert("Done");
-    },
-  },
+  methods: {},
 };
 </script>
