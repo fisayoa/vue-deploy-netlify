@@ -125,7 +125,7 @@
           </table>
         </div>
       </div>
-        <div class="column-sm-12 column-md-4" v-if="cart.length > 1">
+        <div class="column-sm-12 column-md-4" v-if="cart.drinks.length > 1">
           <Checkout />
         </div>
       </div>
