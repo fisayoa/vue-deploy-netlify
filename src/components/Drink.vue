@@ -13,7 +13,7 @@
         <div
           class="display-flex my-2 align-items-center justify-content-evenly"
         >
-          <router-link to="/drink" class="btn btn-outline-main px-auto"
+          <router-link to="/#" class="btn btn-outline-main px-auto"
             >VIEW DETAILS</router-link
           >
           <button v-on:click="addToCart(drink)" class="btn btn-main px-auto">

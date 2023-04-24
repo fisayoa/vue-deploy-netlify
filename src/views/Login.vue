@@ -18,7 +18,7 @@
                             </div>
 
                             <div class="display-flex">
-                                <router-link to="/index" class="mx-auto btn btn-main w-75 mb-3">LOGIN</router-link>
+                                <router-link to="/" class="mx-auto btn btn-main w-75 mb-3">LOGIN</router-link>
                             </div>
 
                             <div class="text-center">Don't have an account <router-link class="text-main"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4 class="mb-3">Billing address</h4>
-    <form>
+    <form action="#"> 
       <div class="row">
         <div class="column-md-6 mb-3">
           <label for="firstName">First name</label>
@@ -56,32 +56,21 @@
       <div class="row">
         <div class="column-md-5 mb-3">
           <label for="country">Country</label>
-          <select
-            class="form-select display-block w-100"
-            id="country"
-          >
+          <select class="form-select display-block w-100" id="country">
             <option value="">Choose...</option>
             <option>United States</option>
           </select>
         </div>
         <div class="column-md-4 mb-3">
           <label for="state">State</label>
-          <select
-            class="form-select display-block w-100"
-            id="state"
-          >
+          <select class="form-select display-block w-100" id="state">
             <option value="">Choose...</option>
             <option>California</option>
           </select>
         </div>
         <div class="column-md-3 mb-3">
           <label for="zip">Zip</label>
-          <input
-            type="text"
-            class="form-control"
-            id="zip"
-            placeholder=""
-          />
+          <input type="text" class="form-control" id="zip" placeholder="" />
         </div>
       </div>
       <hr class="mb-4" />
@@ -90,7 +79,7 @@
         <div class="custom-control custom-radio">
           <input
             id="credit"
-            name="paymentMethod"
+            name=""
             type="radio"
             class="custom-control-input"
             checked=""
@@ -100,7 +89,7 @@
         <div class="custom-control custom-radio">
           <input
             id="debit"
-            name="paymentMethod"
+            name=""
             type="radio"
             class="custom-control-input"
           />
@@ -110,12 +99,7 @@
       <div class="row">
         <div class="column-md-6 mb-3">
           <label for="cc-name">Name on card</label>
-          <input
-            type="text"
-            class="form-control"
-            id="cc-name"
-            placeholder=""
-          />
+          <input type="text" class="form-control" id="cc-name" placeholder="" />
           <small class="text-muted">Full name as display-ed on card</small>
         </div>
         <div class="column-md-6 mb-3">
@@ -140,12 +124,7 @@
         </div>
         <div class="column-md-6 mb-3">
           <label for="cc-cvv">CVV</label>
-          <input
-            type="text"
-            class="form-control"
-            id="cc-cvv"
-            placeholder=""
-          />
+          <input type="text" class="form-control" id="cc-cvv" placeholder="" />
         </div>
       </div>
       <hr class="mb-4" />
@@ -161,25 +140,7 @@ export default {
   name: "Checkout",
   methods: {
     pay() {
-      const data = JSON.parse(localStorage.getItem("cart"));
-      console.log("Hey");
-
-      localStorage.setItem(
-        "orders",
-        JSON.stringify(
-          data.map((res) => {
-            return {
-              id: res.id,
-              name: res.name,
-              price: res.price,
-              total: this.getDuplicates(data, res.id) * res.price,
-              image: res.image,
-              date: new Date(),
-            };
-          })
-        )
-      );
-      localStorage.setItem("cart", JSON.stringify([]));
+      this.$store.dispatch("cart/CHECKOUT_CART");
 
       alert("Checkout successful");
     },

@@ -11,7 +11,7 @@ const vuexLocalStorage = new VuexPersist({
 Vue.use(Vuex);
 
 const initialState = {
-  cart: null,
+  cart: [],
   total: 0,
   orders: null,
 };
@@ -122,7 +122,7 @@ const cart = {
       });
     },
     REMOVE_QUANTITY({ commit }, payload) {
-      const arr = JSON.parse(localStorage.getItem("cart"))
+      const arr = JSON.parse(localStorage.getItem("cart"));
 
       if (payload.quantity < 1) {
         const arr = JSON.parse(localStorage.getItem("cart"));
@@ -192,6 +192,27 @@ const cart = {
           val.map((v) => v.price).reduce((a, b) => a + b, 0)
         ).toFixed(2),
       });
+    },
+    CHECKOUT_CART({ commit }) {
+      const data = JSON.parse(localStorage.getItem("cart"));
+
+      localStorage.setItem(
+        "orders",
+        JSON.stringify(
+          removeDupes(data).map((res) => {
+            return {
+              id: res.id,
+              name: res.name,
+              price: res.price,
+              total: getDuplicates(data, res.id) * res.price,
+              image: res.image,
+              date: new Date(),
+            };
+          })
+        )
+      );
+
+      localStorage.setItem("cart", JSON.stringify([]));
     },
   },
   mutations: {
