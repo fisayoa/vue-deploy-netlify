@@ -142,7 +142,9 @@ export default {
     pay() {
       this.$store.dispatch("cart/CHECKOUT_CART");
 
-      alert("Checkout successful");
+      alert("Order Completed successfully");
+
+     // Redirect to orders Page
     },
   },
 };
