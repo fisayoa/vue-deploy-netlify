@@ -40,7 +40,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <span>Kizito</span>
+                <span>Fisayo</span>
                 <i class="ps-1 bi bi-chevron-down"></i>
               </li>
             </a>
