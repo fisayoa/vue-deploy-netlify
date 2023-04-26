@@ -144,6 +144,7 @@ export default {
 
       alert("Order Completed successfully");
 
+      this.$router.push("/orders")
      // Redirect to orders Page
     },
   },
