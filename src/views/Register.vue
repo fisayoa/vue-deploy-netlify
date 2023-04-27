@@ -65,9 +65,6 @@ export default {
   },
   methods: {
     registerUser() {
-      console.log(
-        JSON.stringify({ email: this.email, password: this.password })
-      );
       localStorage.setItem(
         "user",
         JSON.stringify({ email: this.email, password: this.password })
