@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4 class="mb-3">Billing address</h4>
-    <form action="#"> 
+    <form action="#">
       <div class="row">
         <div class="column-md-6 mb-3">
           <label for="firstName">First name</label>
@@ -87,12 +87,7 @@
           <label class="custom-control-label" for="credit">Credit card</label>
         </div>
         <div class="custom-control custom-radio">
-          <input
-            id="debit"
-            name=""
-            type="radio"
-            class="custom-control-input"
-          />
+          <input id="debit" name="" type="radio" class="custom-control-input" />
           <label class="custom-control-label" for="debit">Debit card</label>
         </div>
       </div>
@@ -144,8 +139,8 @@ export default {
 
       alert("Order Completed successfully");
 
-      this.$router.push("/orders")
-     // Redirect to orders Page
+      this.$router.push("/orders");
+      // Redirect to orders Page
     },
   },
 };

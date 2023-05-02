@@ -77,7 +77,7 @@
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <router-link to="/index" class="dropdown-item text-danger"
+                <router-link to="/login" class="dropdown-item text-danger"
                   >Login</router-link
                 >
               </li>
