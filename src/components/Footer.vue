@@ -3,7 +3,7 @@
         <div style="margin-bottom: -20px;" class="container-fluid mt-5 background__main">
             <footer class="section-footer border-top">
                 <div class="">
-                    <div class="footer-top py-4">
+                    <!-- <div class="footer-top py-4">
                         <div class="row">
                             <div class="column-md-4">
                                 <article class="me-3">
@@ -63,8 +63,8 @@
                                         src="https://i.imgur.com/47q2YGt.png" height="40" width="123"></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="footer-copyright border-top">
+                    </div> -->
+                    <div class="footer-copyright border-top py-4">
                         <p class="float-left text-muted"> &copy; 2022 Fine Wine All rights reserved </p>
                     </div>
                 </div>

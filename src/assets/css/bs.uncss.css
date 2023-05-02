@@ -446,16 +446,12 @@ button:not(:disabled) {
   z-index: 5;
 }
 .input-group:not(.has-validation)
-  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
-    .form-floating
-  ) {
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-    .valid-feedback
-  ):not(.invalid-tooltip):not(.invalid-feedback) {
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -777,6 +773,7 @@ button:not(:disabled) {
 .carousel-inner {
   position: relative;
   width: 100%;
+  height: 70vh;
   overflow: hidden;
 }
 .carousel-inner::after {
@@ -1306,16 +1303,12 @@ button:not(:disabled) {
   z-index: 5;
 }
 .input-group:not(.has-validation)
-  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
-    .form-floating
-  ) {
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-    .valid-feedback
-  ):not(.invalid-tooltip):not(.invalid-feedback) {
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
