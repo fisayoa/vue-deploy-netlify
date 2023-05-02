@@ -132,7 +132,7 @@
   </div>
 </template>
 <script>
-import drinks from "../drinks.json";
+// import drinks from "../drinks.json";
 
 import Checkout from "../components/Checkout.vue";
 
